@@ -36,18 +36,19 @@ module load singularity
 singularity run dli-nlp-nemo.sif
 
 ```
+![](images/run.png)
 
 **Opening the Jupyter Lab**
 
 **Option 1**: You can use Thinlinc and open Firefox and navigate to url  [http://<compute-node>:8888/lab/lab](http://%3Ccompute-node%3E:8888/lab/lab)
 
 where [<compute-node>](http://%3Ccompute-node%3E:8888/lab/lab) is the name of node you have your interactive session is connected. 
-
+![](images/jlab.png)
 **Option 2**: Or you can create an ssh tunnel and forward all the traffic of jupyter notebook port to your local machine
 
 `ssh -N -f -L 8888:[<compute-node>](http://%3Ccompute-node%3E:8888/lab/lab):8888 cnetID[@midway3.rcc.uchicago.edu](mailto:pnsinha@midway3.rcc.uchicago.edu)`
 
-open any browser and navigate to http://localhost:8888
+open any browser and navigate to http://127.0.0.1:8888 or http://localhost:8888
 
 ### Troubleshooting:
 
