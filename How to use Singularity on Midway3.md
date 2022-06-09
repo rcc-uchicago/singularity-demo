@@ -1,6 +1,5 @@
 # How to use Singularity on Midway3
-**Parmanand Sinha, PhD, Computational Scientist, 
-Research Computing Center, UChicago**
+
 
 Docker is not supported by RCC on the Midway cluster because of security concerns that Singularity addresses. Users who wish to use Docker containers should convert them to Singularity containers. Instructions on how to do this are included below.
 
@@ -120,4 +119,4 @@ You can delete everything in the "faketmp" and "fakecache" directories after cre
 * https://github.com/apptainer/singularity
 * https://apptainer.org/
 
-
+For any additional question please email help@rcc.uchicago.edu
