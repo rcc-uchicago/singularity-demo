@@ -106,10 +106,10 @@ As a default, Singularity uses the **/tmp** directory on the local machine (whic
 If you see this, then it most likely means that **/tmp** got filled up on the machine you're using. to get around create **faketmp** and **fakecache** directory and redirect Singularity's default temporary output to **SINGULARITY_TMPDIR** and **SINGULARITY_CACHEDIR**
 
 ```bash
-export $SINGULARITY_CACHEDIR=$SCRATCH/$user/container/fakecache
-export $SINGULARITY_TMPDIR=$SCRATCH/$user/container/faketmp
+export $SINGULARITY_CACHEDIR=$SCRATCH/$USER/container/fakecache
+export $SINGULARITY_TMPDIR=$SCRATCH/$USER/container/faketmp
 ```
-
+On midway3, $SCRATCH/$USER refers to /scratch/midway3/<cnetid>
 You can delete everything in the "faketmp" and "fakecache" directories after creation of your container.
 
 

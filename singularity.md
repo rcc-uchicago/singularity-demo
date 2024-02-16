@@ -1,5 +1,10 @@
+---
+marp: true
+---
 
-::: frame
+
+
+---
 
 
 # Using Singularity/Apptainer on Midway Cluster
@@ -8,12 +13,12 @@
 * **Parmanand Sinha, Computational Scientist**
 * May 30, 2023
 
-:::
+---
 
 
 # Where to get this presentation
 
-::: frame
+---
 ### Where to get this presentation
 
 1.  Web browser:
@@ -23,9 +28,9 @@
 2.  GIT:
 
         git clone https://github.com/rcc-uchicago/singularity-demo.git
-:::
+---
 
-::: frame
+---
 ### Learning Objectives
 
 * Singularity syntax, the use of container repositories
@@ -38,10 +43,10 @@
 
 
 URL: <https://github.com/rcc-uchicago/singularity-demo>
-:::
+---
 
 
-::: frame
+---
 
 ## Containers and Singularity
 
@@ -53,20 +58,20 @@ Containers are lightweight and portable, meaning they can be easily moved from o
 2. Containers are lightweight and portable, making it easy to move them from one place to another.
 3. Containers provide a consistent environment for applications, regardless of the underlying computer system.
 
-:::
+---
 
-::: frame
+---
 
 ## Singularity
 4. Singularity is a specialized type of container technology for scientific and high-performance computing.
 5. Singularity allows researchers to package their scientific workflows, experiments, or simulations into containers that can be easily shared and run on different computing systems.
 6. Singularity ensures consistency of scientific software and dependencies across different computing environments.
 7. Containers and Singularity make it easier for developers and researchers to build, deploy, manage, collaborate, and reproduce their work effectively.
-:::
+---
 
 
 
-::: frame
+---
 ### workflow
 
 Let's say you're a researcher working on a complex simulation that requires specific software and libraries to run. You've developed the simulation on your personal computer, but now you want to run it on a high-performance computing cluster at your university. However, the cluster has different software versions and configurations than your computer.
@@ -103,9 +108,9 @@ To ensure your simulation runs smoothly on the cluster, you can create a Singula
 
     -   VM typically gives more flexibility at the expense of
         performance.
-:::
+---
 
-::: frame
+---
 ### What is Singularity
 
 -   Singularity vs Docker
@@ -129,17 +134,17 @@ To ensure your simulation runs smoothly on the cluster, you can create a Singula
     converting them into Singularity images
 
 
-:::
+---
 
 # When to use Singularity
 
-::: frame
+---
 ### When to use Singularity
 
 
-:::
+---
 
-::: frame
+---
 ### When to use Singularity
 
 -   To create a Singularity recipe for installing Python, you can follow these steps:
@@ -162,7 +167,7 @@ From: python:latest
     python3 "$@"
 ```
 
-:::
+---
 
 Let's go through what each section does:
 
@@ -185,7 +190,7 @@ sudo singularity build python_container.sif python_recipe.def
 ```
 This will create a Singularity container file named python_container.sif based on the recipe specified in python_recipe.def. You can then use this container to run Python applications or scripts on different systems without worrying about installing Python or its dependencies.
 
-::: frame
+---
 ### singularity image from NVIDIA GPU Cloud
 
 Go to the NVIDIA GPU Cloud (NGC) website at https://ngc.nvidia.com/.
@@ -214,7 +219,7 @@ Paste the copied pull command into the terminal and execute it. This command wil
 Depending on your internet connection and the size of the Singularity image, the download may take some time. Once the download is complete, you will have the Singularity image file on your local machine or the specified system.
 
 -   
-:::
+---
 
 # Example codes
 
@@ -223,15 +228,15 @@ https://github.com/rcc-uchicago/singularity-demo/blob/main/How%20to%20use%20Sing
 
 https://github.com/rcc-uchicago/singularity-demo/blob/main/Rstudio_Singularity.md
 
-::: frame
+---
 
-:::
+---
 
 
 
 # References
 
-::: frame
+---
 ### References
 
     http://singularity.lbl.gov   - Singularity home page
@@ -248,4 +253,4 @@ https://github.com/rcc-uchicago/singularity-demo/blob/main/Rstudio_Singularity.m
     https://github.com/singularityhub/\
           singularityhub.github.io/wiki
                                  - Build containers in the Hub
-:::
+---
