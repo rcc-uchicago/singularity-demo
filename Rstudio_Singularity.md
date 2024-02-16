@@ -1,11 +1,37 @@
-## Using Rstudio with Singulrity
+
+# Using Rstudio with Singulrity
+
+Two Docker images we utilize are created by the Rocker Project. You can find more information about them at the following links: https://rocker-project.org/ and https://journal.r-project.org/archive/2020/RJ-2020-007/RJ-2020-007.pdf.
+
+## Part1: Create a Rstudio server container
+For the rocker/geospatial, which is based on rocker/rstudio and includes most of the packages, you can run it directly from the Docker image like this (use either of these images):
+
+```shell
+singularity pull rstudio-geo_latest.sif docker://rocker/geospatial:latest
+```
+And for the base R version available on https://hub.docker.com/r/rocker/rstudio:
+```shell
+singularity pull rstudio_latest.sif docker://rocker/rstudio:latest
+```
+Similarly, for the Bioconductor Docker image available on 
+```shell
+https://hub.docker.com/r/bioconductor/bioconductor_docker:
+singularity pull bioconductor_latest.sif docker://bioconductor/bioconductor_docker:latest
+```
+
+RStudio images are also available on Singularity Hub. Obtaining them from Singularity Hub would save disk space occupied by intermediate files during the conversion from Docker.
+
+```shell
+singularity pull --name singularity-rstudio.sif shub://nickjer/singularity-rstudio
+```
+
+Save the RStudio image to your project or scratch directory.
+
+## Part2: This exercise assumes you have a Rstudio container image
 
 This example bind mounts the /project/gstein directory on the host into the Singularity container.
 By default the only host file systems mounted within the container are $HOME, /tmp, /proc, /sys, and /dev.
 type in the password you want to set, make it more complicated than this dummy one
-
-
-
 
 ```bash
 #!/bin/sh
@@ -38,7 +64,7 @@ END
 cat > ${workdir}/rsession.sh <<END
 #!/bin/sh
 export OMP_NUM_THREADS=${SLURM_JOB_CPUS_PER_NODE}
-export R_LIBS_USER=${HOME}/R/rocker-rstudio/4.0
+export R_LIBS_USER=${HOME}/R/container-rstudio/4.3
 exec rsession "\${@}"
 END
 
@@ -86,6 +112,7 @@ singularity exec --cleanenv rstudio_latest.sif \
             --rsession-path=/etc/rstudio/rsession.sh
 printf 'rserver exited' 1>&2
 ```
+
 **Output**
 
 ```plaintext
@@ -107,4 +134,3 @@ When done using RStudio Server, terminate the job by:
 
       scancel -f 4093518
 ```
-
