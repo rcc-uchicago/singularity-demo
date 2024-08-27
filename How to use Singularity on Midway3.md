@@ -122,14 +122,14 @@ To resolve these issues, you can override Singularity's default temporary and ca
 1. **Create New Directories**: Create a new directory in your scratch space to hold the temporary and cache files:
 
    ```bash
-   mkdir -p /scratch/$USER/singularity/{cache,tmp}
+   mkdir -p $SCRATCH/$USER/singularity/{cache,tmp}
    ```
 
 2. **Set Environment Variables**: Export the following environment variables to redirect the temporary and cache directories:
 
    ```bash
-   export SINGULARITY_CACHEDIR="/scratch/$USER/singularity/cache"
-   export SINGULARITY_TMPDIR="/scratch/$USER/singularity/tmp"
+   export SINGULARITY_CACHEDIR="$SCRATCH/$USER/singularity/cache"
+   export SINGULARITY_TMPDIR="$SCRATCH/$USER/singularity/tmp"
    ```
 
    - **SINGULARITY_CACHEDIR**: This is the directory where Singularity will download and cache files.
